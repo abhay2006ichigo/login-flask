@@ -12,7 +12,7 @@ def login():
             session ["user"] = username
             return redirect(url_for("welcome"))
         else:
-            return Response("Invalid credentials. Try again", mimetype="text/plain")
+            return Response("incorrect username or password", mimetype="text/plain")
     return'''
    <h1>Login</h1>
 
@@ -21,14 +21,12 @@ def login():
             <input
                 type="text"
                 name="username"
-                placeholder="Username"
-            >
+                placeholder="Username">
 
             <input
                 type="password"
                 name="password"
-                placeholder="Password"
-            >
+                placeholder="Password">
 
             <button type="submit">
                 Login
